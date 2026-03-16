@@ -1,4 +1,4 @@
-name: Deploy Aula Pronta
+name: Deploy Marcelo FrontEnd
 
 on:
   push:
