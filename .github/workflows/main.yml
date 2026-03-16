@@ -23,7 +23,7 @@ jobs:
           server: ${{secrets.SERVE}}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local-dir: dist/TreinaLibras/browser/
-          server-dir: ${{ secrets.SERVER_TREINALIBRAS }}
+          local-dir: dist/marcelofrontend/browser/
+          server-dir: ${{ secrets.SERVER_MARCELOFRONTEND }}
 
     
