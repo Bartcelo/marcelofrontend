@@ -5,7 +5,7 @@ on:
     branches:
       - main  
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: false
 
 jobs:
   build-and-deploy:
@@ -21,7 +21,7 @@ jobs:
           npm run build
 
       - name: Deploy via FTP Aula Pronta
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@4.3.6
         with:
           server: ${{secrets.SERVE}}
           username: ${{ secrets.USERNAME }}
