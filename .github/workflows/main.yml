@@ -1,0 +1,29 @@
+name: Deploy Aula Pronta
+
+on:
+  push:
+    branches:
+      - main  
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy via FTP Aula Pronta
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{secrets.SERVE}}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: dist/TreinaLibras/browser/
+          server-dir: ${{ secrets.SERVER_TREINALIBRAS }}
+
+    
